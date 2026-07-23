@@ -1,0 +1,249 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "hubmap": "https://hubmapconsortium.org/",
+    "@base": "cr_base_iri/"
+  },
+  "@type": "sc:Dataset",
+  "name": "HuBMAP HBM279.TQRS.775",
+  "description": "Lymph Node Case 3 Region 2",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "citeAs": "Clive Wasserfall; Jerelyn Nick; Marda Jorgensen; Harry Nick; Mark Atkinson; Jesus Aponte (2020). CODEX data from the lymph node of a 18-year-old black or african american male. HuBMAP Consortium. https://doi.org/10.35079/HBM279.TQRS.775",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Clive Wasserfall",
+      "url": "https://orcid.org/0000-0002-3522-8932"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Jerelyn Nick",
+      "url": "https://orcid.org/0000-0002-8928-741X"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Marda Jorgensen",
+      "url": "https://orcid.org/0000-0002-7250-3569"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Harry Nick",
+      "url": "https://orcid.org/0000-0002-0374-2283"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Mark Atkinson",
+      "url": "https://orcid.org/0000-0001-8489-4782"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Jesus Aponte",
+      "url": "https://orcid.org/0000-0001-5903-2291"
+    }
+  ],
+  "datePublished": "2020-08-22",
+  "keywords": [
+    "CODEX",
+    "imaging",
+    "Protein",
+    "Lymph Node",
+    "UBERON:0000029",
+    "UBERON:0010396",
+    "UBERON:0002194",
+    "UBERON:0010748",
+    "UBERON:0010397",
+    "UBERON:0002007",
+    "UBERON:0010417",
+    "UBERON:0002049",
+    "Homo sapiens",
+    "NCBITaxon:9606",
+    "HuBMAP"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "University of Florida TMC"
+  },
+  "rai:dataCollection": "CODEX on lymph node. Donor: 18.0 years-old Black or African American male (BMI 27.1; blood group Blood Type O; cause of death Head trauma). Specimen chain: section <- block <- organ. Instrument: Keyence BZ-X800 / prep: Akoya Biosciences CODEX Instrument. Assay parameters: number_of_antibodies=18, number_of_biomarker_imaging_rounds=9, number_of_channels=4, is_targeted=Yes, analyte_class=Protein. Full machine-readable provenance (W3C PROV) at https://entity.api.hubmapconsortium.org/entities/HBM279.TQRS.775/provenance.",
+  "rai:dataCollectionRawData": "Raw CODEX instrument output on the HuBMAP portal.",
+  "rai:dataCollectionType": "Direct measurement",
+  "rai:dataLimitations": "Single donor, single tissue section — not representative of population variation.",
+  "rai:personalSensitiveInformation": "Human donor data; direct identifiers removed. De-identified demographic/clinical attributes provided under HuBMAP human-subjects governance.",
+  "sameAs": "https://doi.org/10.35079/HBM279.TQRS.775",
+  "url": "https://doi.org/10.35079/HBM279.TQRS.775",
+  "version": "1.0.0",
+  "prov:wasGeneratedBy": {
+    "@type": "prov:Activity",
+    "schema:name": "CODEX acquisition",
+    "hubmap:instrument": "Keyence BZ-X800",
+    "hubmap:numberOfAntibodies": "18",
+    "hubmap:numberOfImagingRounds": "9",
+    "hubmap:numberOfChannels": "4",
+    "prov:wasAssociatedWith": [
+      {
+        "@type": "prov:Person",
+        "schema:name": "Clive Wasserfall",
+        "prov:role": "principal investigator"
+      },
+      {
+        "@type": "prov:Person",
+        "schema:name": "Marda Jorgensen",
+        "prov:role": "operator"
+      },
+      {
+        "@type": "prov:Organization",
+        "schema:name": "University of Florida TMC"
+      }
+    ],
+    "prov:startedAtTime": "2019-12-20 17:18",
+    "prov:used": [
+      {
+        "@type": [
+          "prov:Entity",
+          "schema:CreativeWork"
+        ],
+        "@id": "https://dx.doi.org/10.17504/protocols.io.bdcbi2sn",
+        "prov:role": "protocol"
+      },
+      {
+        "@type": [
+          "prov:Entity",
+          "schema:CreativeWork"
+        ],
+        "@id": "https://dx.doi.org/10.17504/protocols.io.bc2riyd6",
+        "prov:role": "protocol"
+      },
+      {
+        "@type": [
+          "prov:Entity",
+          "schema:CreativeWork"
+        ],
+        "@id": "https://dx.doi.org/10.17504/protocols.io.bbsdina6",
+        "prov:role": "protocol"
+      }
+    ]
+  },
+  "prov:wasDerivedFrom": {
+    "@type": "prov:Entity",
+    "@id": "https://hubmapconsortium.org/HBM769.GQBZ.382",
+    "schema:name": "HBM769.GQBZ.382",
+    "hubmap:entityType": "Sample",
+    "hubmap:sampleCategory": "section",
+    "hubmap:ccfAnnotations": [
+      "http://purl.obolibrary.org/obo/UBERON_0010396",
+      "http://purl.obolibrary.org/obo/UBERON_0002194",
+      "http://purl.obolibrary.org/obo/UBERON_0010748",
+      "http://purl.obolibrary.org/obo/UBERON_0010397",
+      "http://purl.obolibrary.org/obo/UBERON_0002007",
+      "http://purl.obolibrary.org/obo/UBERON_0010417",
+      "http://purl.obolibrary.org/obo/UBERON_0002049"
+    ],
+    "hubmap:dimensions": {
+      "x": 10,
+      "y": 10,
+      "z": 12,
+      "unit": "millimeter"
+    },
+    "prov:wasDerivedFrom": {
+      "@type": "prov:Entity",
+      "@id": "https://hubmapconsortium.org/HBM255.DZTZ.982",
+      "schema:name": "HBM255.DZTZ.982",
+      "hubmap:entityType": "Sample",
+      "hubmap:sampleCategory": "block",
+      "hubmap:ccfAnnotations": [
+        "http://purl.obolibrary.org/obo/UBERON_0010396",
+        "http://purl.obolibrary.org/obo/UBERON_0002194",
+        "http://purl.obolibrary.org/obo/UBERON_0010748",
+        "http://purl.obolibrary.org/obo/UBERON_0010397",
+        "http://purl.obolibrary.org/obo/UBERON_0002007",
+        "http://purl.obolibrary.org/obo/UBERON_0010417",
+        "http://purl.obolibrary.org/obo/UBERON_0002049"
+      ],
+      "hubmap:dimensions": {
+        "x": 10,
+        "y": 10,
+        "z": 12,
+        "unit": "millimeter"
+      },
+      "prov:wasDerivedFrom": {
+        "@type": "prov:Entity",
+        "@id": "https://hubmapconsortium.org/HBM373.HFNX.363",
+        "schema:name": "HBM373.HFNX.363",
+        "hubmap:entityType": "Sample",
+        "hubmap:sampleCategory": "organ",
+        "prov:wasDerivedFrom": {
+          "@type": "prov:Entity",
+          "@id": "https://hubmapconsortium.org/HBM678.JKBB.893",
+          "schema:name": "HBM678.JKBB.893",
+          "hubmap:entityType": "Donor"
+        }
+      }
+    }
+  },
+  "hubmap:hasProcessedDataset": [
+    {
+      "@type": "prov:Entity",
+      "@id": "https://hubmapconsortium.org/HBM653.RRCF.859",
+      "schema:name": "HBM653.RRCF.859",
+      "hubmap:datasetType": "CODEX [Cytokit + SPRM]"
+    },
+    {
+      "@type": "prov:Entity",
+      "@id": "https://hubmapconsortium.org/HBM695.NCKX.893",
+      "schema:name": "HBM695.NCKX.893",
+      "hubmap:datasetType": "CODEX [Cytokit + SPRM]"
+    }
+  ],
+  "schema:measurementTechnique": "CODEX",
+  "schema:isBasedOn": [
+    "https://dx.doi.org/10.17504/protocols.io.bdcbi2sn",
+    "https://dx.doi.org/10.17504/protocols.io.bc2riyd6",
+    "https://dx.doi.org/10.17504/protocols.io.bbsdina6"
+  ]
+}

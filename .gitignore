@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+# generated output (except the checked-in examples/)
+croissant_*.jsonld
+!examples/croissant_*.jsonld
