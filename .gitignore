@@ -6,3 +6,7 @@ venv/
 # generated output (except the checked-in examples/)
 croissant_*.jsonld
 !examples/croissant_*.jsonld
+
+# generated manifests
+*.manifest.tsv
+*.manifest.json
