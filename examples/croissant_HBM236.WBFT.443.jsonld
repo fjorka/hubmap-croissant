@@ -51,24 +51,17 @@
     "@base": "cr_base_iri/"
   },
   "@type": "sc:Dataset",
-  "name": "HuBMAP HBM653.RRCF.859",
-  "description": "['codex_cytokit__077f7862f6306055899374c7807a30c3__codex-pipeline']",
+  "name": "HuBMAP HBM236.WBFT.443",
+  "description": "codex_cytokit__26191c2719339be0c3fa6dc8a7ba3550__codex-pipeline",
   "conformsTo": "http://mlcommons.org/croissant/1.1",
-  "citeAs": "HuBMAP Consortium (2020). CODEX [Cytokit + SPRM] data from the lymph node of a 18-year-old black or african american male. HuBMAP Consortium.",
-  "datePublished": "2020-08-22",
+  "citeAs": "HuBMAP Consortium (2023). CODEX [Cytokit + SPRM] data from the small intestine of a 67-year-old white female. HuBMAP Consortium.",
+  "datePublished": "2023-08-07",
   "keywords": [
     "CODEX [Cytokit + SPRM]",
     "imaging",
     "Protein",
-    "Lymph Node",
-    "UBERON:0000029",
-    "UBERON:0010396",
-    "UBERON:0002194",
-    "UBERON:0010748",
-    "UBERON:0010397",
-    "UBERON:0002007",
-    "UBERON:0010417",
-    "UBERON:0002049",
+    "Small Intestine",
+    "UBERON:0002108",
     "Homo sapiens",
     "NCBITaxon:9606",
     "HuBMAP"
@@ -76,14 +69,14 @@
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "publisher": {
     "@type": "sc:Organization",
-    "name": "University of Florida TMC"
+    "name": "Stanford TMC"
   },
-  "rai:dataCollection": "CODEX [Cytokit + SPRM] on lymph node. Donor: 18.0 years-old Black or African American male (BMI 27.1; blood group Blood Type O; cause of death Head trauma). Specimen chain: section <- block <- organ. Instrument: Keyence BZ-X800 / prep: Akoya Biosciences CODEX Instrument. Assay parameters: number_of_antibodies=18, number_of_biomarker_imaging_rounds=9, number_of_channels=4, is_targeted=Yes, analyte_class=Protein. Full machine-readable provenance (W3C PROV) at https://entity.api.hubmapconsortium.org/entities/HBM653.RRCF.859/provenance.",
+  "rai:dataCollection": "CODEX [Cytokit + SPRM] on small intestine. Donor: 67.0 years-old White female (BMI 30.2; blood group Blood Type O; cause of death Anoxia). Specimen chain: organ. Instrument: Keyence BZ-X710 / prep: Akoya Biosciences prototype robot - Stanford/Nolan Lab. Assay parameters: number_of_antibodies=52, number_of_biomarker_imaging_rounds=21, number_of_channels=4, is_targeted=Yes, analyte_class=Protein. Full machine-readable provenance (W3C PROV) at https://entity.api.hubmapconsortium.org/entities/HBM236.WBFT.443/provenance.",
   "rai:dataCollectionRawData": "Raw CODEX [Cytokit + SPRM] instrument output on the HuBMAP portal.",
   "rai:dataCollectionType": "Direct measurement",
   "rai:dataLimitations": "Single donor, single tissue section — not representative of population variation.",
   "rai:personalSensitiveInformation": "Human donor data; direct identifiers removed. De-identified demographic/clinical attributes provided under HuBMAP human-subjects governance.",
-  "url": "https://portal.hubmapconsortium.org/browse/dataset/677b19c86cd7dd51a60462aed224ae83",
+  "url": "https://portal.hubmapconsortium.org/browse/dataset/a61523fefe63ff37760a30ff34e53b5f",
   "version": "1.0.0",
   "prov:wasGeneratedBy": {
     "@type": "prov:Activity",
@@ -96,64 +89,91 @@
         ],
         "schema:name": "ingest-pipeline",
         "schema:codeRepository": "https://github.com/hubmapconsortium/ingest-pipeline",
-        "hubmap:commit": "45472e9"
+        "hubmap:commit": "a3774b3"
       },
       {
         "@type": [
           "prov:SoftwareAgent",
           "schema:SoftwareApplication"
         ],
-        "schema:name": "codex-pipeline [pipeline.cwl]",
+        "schema:name": "codex-pipeline [steps/ometiff_second_stitching.cwl]",
         "schema:codeRepository": "https://github.com/hubmapconsortium/codex-pipeline",
-        "hubmap:commit": "2d9ddc6"
+        "hubmap:commit": "16794b6"
       },
       {
         "@type": [
           "prov:SoftwareAgent",
           "schema:SoftwareApplication"
         ],
-        "schema:name": "portal-containers [sprm-to-json.cwl]",
+        "schema:name": "sprm [pipeline.cwl]",
+        "schema:codeRepository": "https://github.com/hubmapconsortium/sprm",
+        "hubmap:commit": "cba3af5"
+      },
+      {
+        "@type": [
+          "prov:SoftwareAgent",
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "create-vis-symlink-archive [pipeline.cwl]",
+        "schema:codeRepository": "https://github.com/hubmapconsortium/create-vis-symlink-archive",
+        "hubmap:commit": "6e55233"
+      },
+      {
+        "@type": [
+          "prov:SoftwareAgent",
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "ome-tiff-pyramid [pipeline.cwl]",
+        "schema:codeRepository": "https://github.com/hubmapconsortium/ome-tiff-pyramid",
+        "hubmap:commit": "b1b40c4"
+      },
+      {
+        "@type": [
+          "prov:SoftwareAgent",
+          "schema:SoftwareApplication"
+        ],
+        "schema:name": "portal-containers [sprm-to-anndata.cwl]",
         "schema:codeRepository": "https://github.com/hubmapconsortium/portal-containers",
-        "hubmap:commit": "fb19103"
+        "hubmap:commit": "0b94a44"
       }
     ]
   },
   "prov:wasDerivedFrom": {
     "@type": "prov:Entity",
-    "@id": "https://doi.org/10.35079/HBM279.TQRS.775",
-    "schema:name": "HBM279.TQRS.775",
+    "@id": "https://doi.org/10.35079/HBM988.SNDW.698",
+    "schema:name": "HBM988.SNDW.698",
     "hubmap:datasetType": "CODEX",
     "prov:wasGeneratedBy": {
       "@type": "prov:Activity",
       "schema:name": "CODEX acquisition",
-      "hubmap:instrument": "Keyence BZ-X800",
-      "hubmap:numberOfAntibodies": "18",
-      "hubmap:numberOfImagingRounds": "9",
+      "hubmap:instrument": "Keyence BZ-X710",
+      "hubmap:numberOfAntibodies": "52",
+      "hubmap:numberOfImagingRounds": "21",
       "hubmap:numberOfChannels": "4",
       "prov:wasAssociatedWith": [
         {
           "@type": "prov:Person",
-          "schema:name": "Clive Wasserfall",
+          "schema:name": "Garry Nolan",
           "prov:role": "principal investigator"
         },
         {
           "@type": "prov:Person",
-          "schema:name": "Marda Jorgensen",
+          "schema:name": "John Hickey",
           "prov:role": "operator"
         },
         {
           "@type": "prov:Organization",
-          "schema:name": "University of Florida TMC"
+          "schema:name": "Stanford TMC"
         }
       ],
-      "prov:startedAtTime": "2019-12-20 17:18",
+      "prov:startedAtTime": "2019-06-10 4:22",
       "prov:used": [
         {
           "@type": [
             "prov:Entity",
             "schema:CreativeWork"
           ],
-          "@id": "https://dx.doi.org/10.17504/protocols.io.bdcbi2sn",
+          "@id": "https://dx.doi.org/10.17504/.protocols.io/private/8DA69578804511EA88340242AC110006",
           "prov:role": "protocol"
         },
         {
@@ -161,7 +181,7 @@
             "prov:Entity",
             "schema:CreativeWork"
           ],
-          "@id": "https://dx.doi.org/10.17504/protocols.io.bc2riyd6",
+          "@id": ".17504/.protocols.io/private/8BD44830810111EAB95F0242AC110005/abstract",
           "prov:role": "protocol"
         },
         {
@@ -169,73 +189,29 @@
             "prov:Entity",
             "schema:CreativeWork"
           ],
-          "@id": "https://dx.doi.org/10.17504/protocols.io.bbsdina6",
+          "@id": "https://dx.doi.org/10.17504/.protocols.io/private/7220269A810111EAB95F0242AC110005/abstract",
           "prov:role": "protocol"
         }
       ]
     },
     "prov:wasDerivedFrom": {
       "@type": "prov:Entity",
-      "@id": "https://portal.hubmapconsortium.org/browse/HBM769.GQBZ.382",
-      "schema:name": "HBM769.GQBZ.382",
+      "@id": "https://portal.hubmapconsortium.org/browse/HBM465.ZCWN.623",
+      "schema:name": "HBM465.ZCWN.623",
       "hubmap:entityType": "Sample",
-      "hubmap:sampleCategory": "section",
-      "hubmap:ccfAnnotations": [
-        "http://purl.obolibrary.org/obo/UBERON_0010396",
-        "http://purl.obolibrary.org/obo/UBERON_0002194",
-        "http://purl.obolibrary.org/obo/UBERON_0010748",
-        "http://purl.obolibrary.org/obo/UBERON_0010397",
-        "http://purl.obolibrary.org/obo/UBERON_0002007",
-        "http://purl.obolibrary.org/obo/UBERON_0010417",
-        "http://purl.obolibrary.org/obo/UBERON_0002049"
-      ],
-      "hubmap:dimensions": {
-        "x": 10,
-        "y": 10,
-        "z": 12,
-        "unit": "millimeter"
-      },
+      "hubmap:sampleCategory": "organ",
       "prov:wasDerivedFrom": {
         "@type": "prov:Entity",
-        "@id": "https://portal.hubmapconsortium.org/browse/HBM255.DZTZ.982",
-        "schema:name": "HBM255.DZTZ.982",
-        "hubmap:entityType": "Sample",
-        "hubmap:sampleCategory": "block",
-        "hubmap:ccfAnnotations": [
-          "http://purl.obolibrary.org/obo/UBERON_0010396",
-          "http://purl.obolibrary.org/obo/UBERON_0002194",
-          "http://purl.obolibrary.org/obo/UBERON_0010748",
-          "http://purl.obolibrary.org/obo/UBERON_0010397",
-          "http://purl.obolibrary.org/obo/UBERON_0002007",
-          "http://purl.obolibrary.org/obo/UBERON_0010417",
-          "http://purl.obolibrary.org/obo/UBERON_0002049"
-        ],
-        "hubmap:dimensions": {
-          "x": 10,
-          "y": 10,
-          "z": 12,
-          "unit": "millimeter"
-        },
-        "prov:wasDerivedFrom": {
-          "@type": "prov:Entity",
-          "@id": "https://portal.hubmapconsortium.org/browse/HBM373.HFNX.363",
-          "schema:name": "HBM373.HFNX.363",
-          "hubmap:entityType": "Sample",
-          "hubmap:sampleCategory": "organ",
-          "prov:wasDerivedFrom": {
-            "@type": "prov:Entity",
-            "@id": "https://portal.hubmapconsortium.org/browse/HBM678.JKBB.893",
-            "schema:name": "HBM678.JKBB.893",
-            "hubmap:entityType": "Donor"
-          }
-        }
+        "@id": "https://portal.hubmapconsortium.org/browse/HBM279.WPZP.978",
+        "schema:name": "HBM279.WPZP.978",
+        "hubmap:entityType": "Donor"
       }
     }
   },
   "schema:measurementTechnique": "CODEX [Cytokit + SPRM]",
   "schema:isBasedOn": [
-    "https://dx.doi.org/10.17504/protocols.io.bdcbi2sn",
-    "https://dx.doi.org/10.17504/protocols.io.bc2riyd6",
-    "https://dx.doi.org/10.17504/protocols.io.bbsdina6"
+    "https://dx.doi.org/10.17504/.protocols.io/private/8DA69578804511EA88340242AC110006",
+    ".17504/.protocols.io/private/8BD44830810111EAB95F0242AC110005/abstract",
+    "https://dx.doi.org/10.17504/.protocols.io/private/7220269A810111EAB95F0242AC110005/abstract"
   ]
 }

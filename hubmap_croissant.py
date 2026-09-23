@@ -31,6 +31,7 @@ SEARCH_API = "https://search.api.hubmapconsortium.org/v3/portal/search"
 PORTAL = "https://portal.hubmapconsortium.org/browse/dataset"
 HUBMAP_LICENSE = "https://creativecommons.org/licenses/by/4.0/"
 HUBMAP = "https://hubmapconsortium.org/"
+ENTITY_BASE = "https://portal.hubmapconsortium.org/browse/"
 
 # HuBMAP two-letter organ codes -> (label, UBERON term)
 ORGAN_MAP = {
@@ -314,9 +315,22 @@ def _acquisition_activity(entity: dict, md: dict) -> dict:
     return {k: v for k, v in act.items() if v not in (None, "", [])}
 
 
+def _entity_iri(e: dict) -> str:
+    """A resolvable IRI for a HuBMAP entity (dataset / sample / donor).
+
+    Prefers the registered DOI when the entity has one (raw datasets do; samples,
+    donors and processed datasets generally don't), otherwise the portal browse URL,
+    which resolves by HuBMAP ID for every entity type. NOTE: `HUBMAP` is the JSON-LD
+    vocabulary namespace and is NOT dereferenceable -- do not mint entity @ids from it.
+    """
+    doi = e.get("doi_url") or (
+        f"https://doi.org/{e['registered_doi']}" if e.get("registered_doi") else None)
+    return doi or ENTITY_BASE + (e.get("hubmap_id") or "")
+
+
 def _specimen_chain(context: dict):
     def node(anc):
-        n = {"@type": "prov:Entity", "@id": HUBMAP + (anc.get("hubmap_id") or ""),
+        n = {"@type": "prov:Entity", "@id": _entity_iri(anc),
              "schema:name": anc.get("hubmap_id"), "hubmap:entityType": anc.get("entity_type"),
              "hubmap:sampleCategory": anc.get("sample_category")}
         rui = anc.get("rui_location")
@@ -356,7 +370,7 @@ def build_embedded_provenance(entity, context, md, descendants=None, raw_entity=
     (which carries the acquisition activity + specimen chain). RAW subject: wasGeneratedBy
     acquisition; wasDerivedFrom specimen chain; + a light forward pointer to processed versions."""
     if is_processed(entity) and raw_entity is not None:
-        raw_node = {"@type": "prov:Entity", "@id": HUBMAP + (raw_entity.get("hubmap_id") or ""),
+        raw_node = {"@type": "prov:Entity", "@id": _entity_iri(raw_entity),
                     "schema:name": raw_entity.get("hubmap_id"),
                     "hubmap:datasetType": raw_entity.get("dataset_type"),
                     "prov:wasGeneratedBy": _acquisition_activity(raw_entity, raw_md or {}),
@@ -370,7 +384,7 @@ def build_embedded_provenance(entity, context, md, descendants=None, raw_entity=
         provo["prov:wasDerivedFrom"] = chain
     if descendants:
         provo["hubmap:hasProcessedDataset"] = [
-            {"@type": "prov:Entity", "@id": HUBMAP + (d.get("hubmap_id") or ""),
+            {"@type": "prov:Entity", "@id": _entity_iri(d),
              "schema:name": d.get("hubmap_id"), "hubmap:datasetType": d.get("dataset_type")}
             for d in descendants]
     return provo

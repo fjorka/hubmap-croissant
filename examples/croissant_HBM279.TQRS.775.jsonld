@@ -171,7 +171,7 @@
   },
   "prov:wasDerivedFrom": {
     "@type": "prov:Entity",
-    "@id": "https://hubmapconsortium.org/HBM769.GQBZ.382",
+    "@id": "https://portal.hubmapconsortium.org/browse/HBM769.GQBZ.382",
     "schema:name": "HBM769.GQBZ.382",
     "hubmap:entityType": "Sample",
     "hubmap:sampleCategory": "section",
@@ -192,7 +192,7 @@
     },
     "prov:wasDerivedFrom": {
       "@type": "prov:Entity",
-      "@id": "https://hubmapconsortium.org/HBM255.DZTZ.982",
+      "@id": "https://portal.hubmapconsortium.org/browse/HBM255.DZTZ.982",
       "schema:name": "HBM255.DZTZ.982",
       "hubmap:entityType": "Sample",
       "hubmap:sampleCategory": "block",
@@ -213,13 +213,13 @@
       },
       "prov:wasDerivedFrom": {
         "@type": "prov:Entity",
-        "@id": "https://hubmapconsortium.org/HBM373.HFNX.363",
+        "@id": "https://portal.hubmapconsortium.org/browse/HBM373.HFNX.363",
         "schema:name": "HBM373.HFNX.363",
         "hubmap:entityType": "Sample",
         "hubmap:sampleCategory": "organ",
         "prov:wasDerivedFrom": {
           "@type": "prov:Entity",
-          "@id": "https://hubmapconsortium.org/HBM678.JKBB.893",
+          "@id": "https://portal.hubmapconsortium.org/browse/HBM678.JKBB.893",
           "schema:name": "HBM678.JKBB.893",
           "hubmap:entityType": "Donor"
         }
@@ -229,13 +229,13 @@
   "hubmap:hasProcessedDataset": [
     {
       "@type": "prov:Entity",
-      "@id": "https://hubmapconsortium.org/HBM653.RRCF.859",
+      "@id": "https://portal.hubmapconsortium.org/browse/HBM653.RRCF.859",
       "schema:name": "HBM653.RRCF.859",
       "hubmap:datasetType": "CODEX [Cytokit + SPRM]"
     },
     {
       "@type": "prov:Entity",
-      "@id": "https://hubmapconsortium.org/HBM695.NCKX.893",
+      "@id": "https://portal.hubmapconsortium.org/browse/HBM695.NCKX.893",
       "schema:name": "HBM695.NCKX.893",
       "hubmap:datasetType": "CODEX [Cytokit + SPRM]"
     }

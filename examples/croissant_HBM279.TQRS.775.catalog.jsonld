@@ -1,0 +1,510 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "hubmap": "https://hubmapconsortium.org/",
+    "@base": "cr_base_iri/"
+  },
+  "@type": "sc:Dataset",
+  "name": "HuBMAP HBM279.TQRS.775",
+  "description": "Lymph Node Case 3 Region 2",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "citeAs": "Clive Wasserfall; Jerelyn Nick; Marda Jorgensen; Harry Nick; Mark Atkinson; Jesus Aponte (2020). CODEX data from the lymph node of a 18-year-old black or african american male. HuBMAP Consortium. https://doi.org/10.35079/HBM279.TQRS.775",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Clive Wasserfall",
+      "url": "https://orcid.org/0000-0002-3522-8932"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Jerelyn Nick",
+      "url": "https://orcid.org/0000-0002-8928-741X"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Marda Jorgensen",
+      "url": "https://orcid.org/0000-0002-7250-3569"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Harry Nick",
+      "url": "https://orcid.org/0000-0002-0374-2283"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Mark Atkinson",
+      "url": "https://orcid.org/0000-0001-8489-4782"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Jesus Aponte",
+      "url": "https://orcid.org/0000-0001-5903-2291"
+    }
+  ],
+  "datePublished": "2020-08-22",
+  "keywords": [
+    "CODEX",
+    "imaging",
+    "Protein",
+    "Lymph Node",
+    "UBERON:0000029",
+    "UBERON:0010396",
+    "UBERON:0002194",
+    "UBERON:0010748",
+    "UBERON:0010397",
+    "UBERON:0002007",
+    "UBERON:0010417",
+    "UBERON:0002049",
+    "Homo sapiens",
+    "NCBITaxon:9606",
+    "HuBMAP"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "University of Florida TMC"
+  },
+  "rai:dataCollection": "CODEX on lymph node. Donor: 18.0 years-old Black or African American male (BMI 27.1; blood group Blood Type O; cause of death Head trauma). Specimen chain: section <- block <- organ. Instrument: Keyence BZ-X800 / prep: Akoya Biosciences CODEX Instrument. Assay parameters: number_of_antibodies=18, number_of_biomarker_imaging_rounds=9, number_of_channels=4, is_targeted=Yes, analyte_class=Protein. Full machine-readable provenance (W3C PROV) at https://entity.api.hubmapconsortium.org/entities/HBM279.TQRS.775/provenance.",
+  "rai:dataCollectionRawData": "Raw CODEX instrument output on the HuBMAP portal.",
+  "rai:dataCollectionType": "Direct measurement",
+  "rai:dataLimitations": "Single donor, single tissue section — not representative of population variation. RESOURCE LAYER ONLY for the imaging file sets. Every image file set above is inventoried and addressable, but no cr:RecordSet is declared over it, and that is deliberate rather than incomplete. Two current mlcroissant limitations make an image RecordSet here dishonest: (1) the image/tiff reader converts pixels with (tifffile.imread(f) * 255).astype('uint8'), which silently corrupts 16-bit data -- every TIFF in this dataset is 16-bit; (2) the reader materialises full pixel arrays whether or not a field requests cr:content, so even a filename-only RecordSet over stitched-channel-images would read 6 GB. Consumers should read these files with a scientific imaging library (tifffile, bioio) using the contentUrl and filename conventions described above.",
+  "rai:personalSensitiveInformation": "Human donor data; direct identifiers removed. De-identified demographic/clinical attributes provided under HuBMAP human-subjects governance.",
+  "sameAs": "https://doi.org/10.35079/HBM279.TQRS.775",
+  "url": "https://doi.org/10.35079/HBM279.TQRS.775",
+  "version": "1.0.0",
+  "prov:wasGeneratedBy": {
+    "@type": "prov:Activity",
+    "schema:name": "CODEX acquisition",
+    "hubmap:instrument": "Keyence BZ-X800",
+    "hubmap:numberOfAntibodies": "18",
+    "hubmap:numberOfImagingRounds": "9",
+    "hubmap:numberOfChannels": "4",
+    "prov:wasAssociatedWith": [
+      {
+        "@type": "prov:Person",
+        "schema:name": "Clive Wasserfall",
+        "prov:role": "principal investigator"
+      },
+      {
+        "@type": "prov:Person",
+        "schema:name": "Marda Jorgensen",
+        "prov:role": "operator"
+      },
+      {
+        "@type": "prov:Organization",
+        "schema:name": "University of Florida TMC"
+      }
+    ],
+    "prov:startedAtTime": "2019-12-20 17:18",
+    "prov:used": [
+      {
+        "@type": [
+          "prov:Entity",
+          "schema:CreativeWork"
+        ],
+        "@id": "https://dx.doi.org/10.17504/protocols.io.bdcbi2sn",
+        "prov:role": "protocol"
+      },
+      {
+        "@type": [
+          "prov:Entity",
+          "schema:CreativeWork"
+        ],
+        "@id": "https://dx.doi.org/10.17504/protocols.io.bc2riyd6",
+        "prov:role": "protocol"
+      },
+      {
+        "@type": [
+          "prov:Entity",
+          "schema:CreativeWork"
+        ],
+        "@id": "https://dx.doi.org/10.17504/protocols.io.bbsdina6",
+        "prov:role": "protocol"
+      }
+    ]
+  },
+  "prov:wasDerivedFrom": {
+    "@type": "prov:Entity",
+    "@id": "https://portal.hubmapconsortium.org/browse/HBM769.GQBZ.382",
+    "schema:name": "HBM769.GQBZ.382",
+    "hubmap:entityType": "Sample",
+    "hubmap:sampleCategory": "section",
+    "hubmap:ccfAnnotations": [
+      "http://purl.obolibrary.org/obo/UBERON_0010396",
+      "http://purl.obolibrary.org/obo/UBERON_0002194",
+      "http://purl.obolibrary.org/obo/UBERON_0010748",
+      "http://purl.obolibrary.org/obo/UBERON_0010397",
+      "http://purl.obolibrary.org/obo/UBERON_0002007",
+      "http://purl.obolibrary.org/obo/UBERON_0010417",
+      "http://purl.obolibrary.org/obo/UBERON_0002049"
+    ],
+    "hubmap:dimensions": {
+      "x": 10,
+      "y": 10,
+      "z": 12,
+      "unit": "millimeter"
+    },
+    "prov:wasDerivedFrom": {
+      "@type": "prov:Entity",
+      "@id": "https://portal.hubmapconsortium.org/browse/HBM255.DZTZ.982",
+      "schema:name": "HBM255.DZTZ.982",
+      "hubmap:entityType": "Sample",
+      "hubmap:sampleCategory": "block",
+      "hubmap:ccfAnnotations": [
+        "http://purl.obolibrary.org/obo/UBERON_0010396",
+        "http://purl.obolibrary.org/obo/UBERON_0002194",
+        "http://purl.obolibrary.org/obo/UBERON_0010748",
+        "http://purl.obolibrary.org/obo/UBERON_0010397",
+        "http://purl.obolibrary.org/obo/UBERON_0002007",
+        "http://purl.obolibrary.org/obo/UBERON_0010417",
+        "http://purl.obolibrary.org/obo/UBERON_0002049"
+      ],
+      "hubmap:dimensions": {
+        "x": 10,
+        "y": 10,
+        "z": 12,
+        "unit": "millimeter"
+      },
+      "prov:wasDerivedFrom": {
+        "@type": "prov:Entity",
+        "@id": "https://portal.hubmapconsortium.org/browse/HBM373.HFNX.363",
+        "schema:name": "HBM373.HFNX.363",
+        "hubmap:entityType": "Sample",
+        "hubmap:sampleCategory": "organ",
+        "prov:wasDerivedFrom": {
+          "@type": "prov:Entity",
+          "@id": "https://portal.hubmapconsortium.org/browse/HBM678.JKBB.893",
+          "schema:name": "HBM678.JKBB.893",
+          "hubmap:entityType": "Donor"
+        }
+      }
+    }
+  },
+  "hubmap:hasProcessedDataset": [
+    {
+      "@type": "prov:Entity",
+      "@id": "https://portal.hubmapconsortium.org/browse/HBM653.RRCF.859",
+      "schema:name": "HBM653.RRCF.859",
+      "hubmap:datasetType": "CODEX [Cytokit + SPRM]"
+    },
+    {
+      "@type": "prov:Entity",
+      "@id": "https://portal.hubmapconsortium.org/browse/HBM695.NCKX.893",
+      "schema:name": "HBM695.NCKX.893",
+      "hubmap:datasetType": "CODEX [Cytokit + SPRM]"
+    }
+  ],
+  "schema:measurementTechnique": "CODEX",
+  "schema:isBasedOn": [
+    "https://dx.doi.org/10.17504/protocols.io.bdcbi2sn",
+    "https://dx.doi.org/10.17504/protocols.io.bc2riyd6",
+    "https://dx.doi.org/10.17504/protocols.io.bbsdina6"
+  ],
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "dataset-archive",
+      "name": "dataset-archive",
+      "description": "The published HuBMAP dataset directory on the HuBMAP asset service. 62 GB total: 38 GB raw CODEX acquisition, 25 GB processed derivatives.",
+      "contentUrl": "https://assets.hubmapconsortium.org/077f7862f6306055899374c7807a30c3",
+      "encodingFormat": "text/html",
+      "sha256": "https://github.com/mlcommons/croissant/issues/80"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "assay-metadata-tsv",
+      "name": "assay-metadata-tsv",
+      "description": "One-row TSV of assay-level acquisition parameters: instrument make/model, x/y/z resolution and units, antibody/channel/cycle counts, protocol DOIs.",
+      "contentUrl": "https://assets.hubmapconsortium.org/077f7862f6306055899374c7807a30c3/codex-akoya-metadata.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "sha256": "8df27cfdfbbeb0d1f9bf78a668f538483313407068aa0d7480203c9647b0c5b1"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "channel-names",
+      "name": "channel-names",
+      "description": "36 lines, one per (cycle, channel) acquisition slot, in acquisition order. Values are marker names (DAPI-01, CD31, CD8, CD45, ...) or 'Blank'.",
+      "contentUrl": "https://assets.hubmapconsortium.org/077f7862f6306055899374c7807a30c3/src_CX_19-002_LN_R2/channelnames.txt",
+      "encodingFormat": "text/plain",
+      "sha256": "473aed4ed81b3153b6f2f4c132e297d5f723033bba1e517816a0b4f010998cf6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "experiment-config",
+      "name": "experiment-config",
+      "description": "Akoya CODEX acquisition configuration: region/tile grid, z-planes, exposure and objective settings.",
+      "contentUrl": "https://assets.hubmapconsortium.org/077f7862f6306055899374c7807a30c3/src_CX_19-002_LN_R2/experiment.json",
+      "encodingFormat": "application/json",
+      "sha256": "cb72567e5c058010dfdd903442a6a52c78aace1feb8fdc6a2071be66ae06e43c"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "segmentation-config",
+      "name": "segmentation-config",
+      "description": "Segmentation parameters used by the CODEX processing pipeline.",
+      "contentUrl": "https://assets.hubmapconsortium.org/077f7862f6306055899374c7807a30c3/src_CX_19-002_LN_R2/segmentation.json",
+      "encodingFormat": "application/json",
+      "sha256": "a27372a598b9111d45d676f33beb0455c6abdaf115184f948fd759d8ce5f4d40"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "exposure-times",
+      "name": "exposure-times",
+      "description": "Per-cycle, per-channel exposure times.",
+      "contentUrl": "https://assets.hubmapconsortium.org/077f7862f6306055899374c7807a30c3/src_CX_19-002_LN_R2/exposure_times.txt",
+      "encodingFormat": "text/plain",
+      "sha256": "7e3b41e5ff1abdafd703502d3ffcb64578cbb329771f62efe058a2a23150a00a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "antibody-panel-xlsx",
+      "name": "antibody-panel-xlsx",
+      "description": "Antibody panel workbook (18 antibodies): clone, vendor, catalogue number, conjugated barcode, dilution. Marker-to-gene mapping lives here.",
+      "contentUrl": "https://assets.hubmapconsortium.org/077f7862f6306055899374c7807a30c3/Pre FEB2020_Antibody_Panel1_UF .xlsx",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "fab1c7adc645cd992b0538fe030ac9097e6a6044cc0d708589596ce128aa0171"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "raw-acquisition-tiles",
+      "name": "raw-acquisition-tiles",
+      "description": "9,000 raw Keyence BZ-X800 TIFFs, 38 GB. 9 cycles x 1 region x 4 channels x tile positions x z-planes. Each file 1920x1440, 16-bit, LZW-compressed, single plane. Filename pattern <tile>_<NNNNN>_Z<zzz>_CH<c>.tif.",
+      "containedIn": {
+        "@id": "dataset-archive"
+      },
+      "encodingFormat": "image/tiff",
+      "includes": "src_CX_19-002_LN_R2/cyc*_reg*/*.tif"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "processed-tiles",
+      "name": "processed-tiles",
+      "description": "2,268 flat-field-corrected, drift-compensated, best-focus tiles, 16-bit. Filename pattern reg<r>_X<xx>_Y<yy>_t<ttt>_z<zzz>_c<ccc>.tif.",
+      "containedIn": {
+        "@id": "dataset-archive"
+      },
+      "encodingFormat": "image/tiff",
+      "includes": "drv_CX_19-002_lymph-node_R2/processed_2020-02-18/tiles/reg*_X*_Y*/*.tif"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "stitched-channel-images",
+      "name": "stitched-channel-images",
+      "description": "37 stitched whole-region mosaics, one per (cycle, channel) slot. Each 9408x9072, 16-bit, uncompressed, ~170 MB. The marker name is encoded in the filename: reg<r>_cyc<cc>_ch<c>_<MARKER>.tif. This is the layer most ML work would start from.",
+      "containedIn": {
+        "@id": "dataset-archive"
+      },
+      "encodingFormat": "image/tiff",
+      "includes": "drv_CX_19-002_lymph-node_R2/processed_2020-02-18/stitched/reg001/*.tif"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "segmentation-masks",
+      "name": "segmentation-masks",
+      "description": "63 per-tile segmentation region masks (PNG), one per processed tile position. Filename pattern regions_reg<r>_X<xx>_Y<yy>_Z<zz>.png.",
+      "containedIn": {
+        "@id": "dataset-archive"
+      },
+      "encodingFormat": "image/png",
+      "includes": "drv_CX_19-002_lymph-node_R2/processed_2020-02-18/segm/segm-1/masks/reg*_X*_Y*/*.png"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "segmentation-features",
+      "name": "segmentation-features",
+      "description": "196 per-tile segmentation outputs: per-cell feature tables and Gabriel graph neighbour lists.",
+      "containedIn": {
+        "@id": "dataset-archive"
+      },
+      "encodingFormat": "text/plain",
+      "includes": "drv_CX_19-002_lymph-node_R2/processed_2020-02-18/segm/segm-1/fcs/*.txt"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "pipeline-diagnostics",
+      "name": "pipeline-diagnostics",
+      "description": "1,734 quality-control artefacts from the processing pipeline (flat-field estimates, focal maps, tile registration reports). Provenance evidence, not analysis input.",
+      "containedIn": {
+        "@id": "dataset-archive"
+      },
+      "encodingFormat": "image/tiff",
+      "includes": "drv_CX_19-002_lymph-node_R2/processed_2020-02-18/diagnostics/**/*"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "assay_parameters",
+      "name": "assay_parameters",
+      "description": "Assay-level acquisition parameters, one record. Read directly from codex-akoya-metadata.tsv.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "assay_parameters/assay_type",
+          "name": "assay_parameters/assay_type",
+          "dataType": "sc:Text",
+          "description": "Assay type, e.g. CODEX.",
+          "source": {
+            "fileObject": {
+              "@id": "assay-metadata-tsv"
+            },
+            "extract": {
+              "column": "assay_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "assay_parameters/instrument_model",
+          "name": "assay_parameters/instrument_model",
+          "dataType": "sc:Text",
+          "description": "Acquisition instrument model.",
+          "source": {
+            "fileObject": {
+              "@id": "assay-metadata-tsv"
+            },
+            "extract": {
+              "column": "acquisition_instrument_model"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "assay_parameters/resolution_x_value",
+          "name": "assay_parameters/resolution_x_value",
+          "dataType": "sc:Float",
+          "description": "Lateral pixel size in x.",
+          "source": {
+            "fileObject": {
+              "@id": "assay-metadata-tsv"
+            },
+            "extract": {
+              "column": "resolution_x_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "assay_parameters/resolution_x_unit",
+          "name": "assay_parameters/resolution_x_unit",
+          "dataType": "sc:Text",
+          "description": "Unit for resolution_x_value, e.g. nm.",
+          "source": {
+            "fileObject": {
+              "@id": "assay-metadata-tsv"
+            },
+            "extract": {
+              "column": "resolution_x_unit"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "assay_parameters/resolution_z_value",
+          "name": "assay_parameters/resolution_z_value",
+          "dataType": "sc:Float",
+          "description": "Axial step size in z.",
+          "source": {
+            "fileObject": {
+              "@id": "assay-metadata-tsv"
+            },
+            "extract": {
+              "column": "resolution_z_value"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "assay_parameters/number_of_antibodies",
+          "name": "assay_parameters/number_of_antibodies",
+          "dataType": "sc:Integer",
+          "description": "Number of antibodies in the panel.",
+          "source": {
+            "fileObject": {
+              "@id": "assay-metadata-tsv"
+            },
+            "extract": {
+              "column": "number_of_antibodies"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "assay_parameters/number_of_cycles",
+          "name": "assay_parameters/number_of_cycles",
+          "dataType": "sc:Integer",
+          "description": "Number of CODEX cycles.",
+          "source": {
+            "fileObject": {
+              "@id": "assay-metadata-tsv"
+            },
+            "extract": {
+              "column": "number_of_cycles"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "assay_parameters/number_of_channels",
+          "name": "assay_parameters/number_of_channels",
+          "dataType": "sc:Integer",
+          "description": "Fluorescence channels per cycle.",
+          "source": {
+            "fileObject": {
+              "@id": "assay-metadata-tsv"
+            },
+            "extract": {
+              "column": "number_of_channels"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
