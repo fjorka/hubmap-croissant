@@ -28,10 +28,11 @@ can stand on before the Baker stage.
 ## Install
 
 ```bash
-pip install -r requirements.txt      # just mlcroissant
+uv sync                              # or: pip install -e .
 ```
 
-Python 3.10+. Published HuBMAP datasets are public, so **no token is needed**.
+Python 3.11+ (set in `pyproject.toml`). Published HuBMAP datasets are public, so
+**no token is needed**.
 
 ## Use
 
@@ -79,16 +80,18 @@ of the file-level layers, on purpose, because those can't be built without the f
 
 ## Examples
 
-`examples/` has two generated outputs, one of each kind:
+`examples/` has three generated outputs:
 
 - `croissant_HBM279.TQRS.775.jsonld` — a **raw** CODEX dataset (acquisition + specimen chain).
 - `croissant_HBM653.RRCF.859.jsonld` — a **processed** dataset derived from it (pipeline provenance +
   `wasDerivedFrom` the raw parent).
+- `croissant_HBM236.WBFT.443.jsonld` — a second **processed** CODEX dataset, kept because an
+  independently generated Croissant exists for the same dataset to compare against.
 
 Regenerate them any time:
 
 ```bash
-python generate.py HBM279.TQRS.775 HBM653.RRCF.859 --outdir examples
+python generate.py HBM279.TQRS.775 HBM653.RRCF.859 HBM236.WBFT.443 --outdir examples
 ```
 
 ## Files
@@ -97,8 +100,8 @@ python generate.py HBM279.TQRS.775 HBM653.RRCF.859 --outdir examples
 |------|------------|
 | `hubmap_croissant.py` | the library — all the HuBMAP→Croissant mapping logic |
 | `generate.py` | CLI wrapper (accepts identifiers, writes `.jsonld` files) |
-| `examples/` | two checked-in sample outputs |
-| `requirements.txt` | `mlcroissant` |
+| `examples/` | checked-in sample outputs |
+| `pyproject.toml` | project metadata + dependencies (`mlcroissant`, `globus-sdk`) |
 
 ## Notes
 

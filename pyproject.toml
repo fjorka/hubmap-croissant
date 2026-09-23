@@ -1,0 +1,19 @@
+[project]
+name = "hubmap-croissant"
+version = "0.1.0"
+description = "Croissant metadata for HuBMAP datasets"
+requires-python = ">=3.11"
+dependencies = [
+    "globus-sdk>=4.9",      # Globus Transfer — operation_ls, for globus_manifest.ipynb
+    "ipykernel>=6",         # so the venv shows up as a Jupyter / VS Code kernel
+    "mlcroissant>=1.1",     # generate.py, hubmap_croissant.py, build_catalog_layer.py
+]
+
+[dependency-groups]
+# Optional: mlcroissant's readers. `uv sync --group readers`
+readers = [
+    "pyarrow",              # parquet
+    "pillow",               # png / jpeg
+    "tifffile",             # tiff
+    "GitPython",            # git+https FileObjects (Hugging Face-style Croissants)
+]
